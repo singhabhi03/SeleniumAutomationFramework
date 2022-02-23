@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
 
+import com.tmb.Constants.FrameworkConstants;
+
 
 
 public class ReadPropertyFile {
@@ -20,7 +22,7 @@ public class ReadPropertyFile {
 	static {
 		
 		try {
-			FileInputStream fip = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config/config.properties");
+			FileInputStream fip = new FileInputStream(FrameworkConstants.getConfigfilepath());
 			 prop.load(fip);
 				for (Map.Entry<Object, Object> entry : prop.entrySet()) {
 					CONFIGMAP.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()).trim());
