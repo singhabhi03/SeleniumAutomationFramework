@@ -5,23 +5,24 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.tmb.driver.DriverManager;
+import com.tmb.enums.WaitStrategy;
 
-public final class OrangeHRMHomePage {
+public final class OrangeHRMHomePage extends BasePage {
 
 	private final By linkWelcome = By.id("welcome");
 	private final By linkLogout = By.xpath("//a[text()='Logout']");
 
 	public OrangeHRMHomePage clickWelCome() {
-		DriverManager.getDriver().findElement(linkWelcome).click();
+		doClick(linkWelcome,WaitStrategy.CLICKABLE);
 
 		return this;
 	}
 
 	@SuppressWarnings("deprecation")
 	public OrangeHRMLoginPage clickLogOut() {
-		WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 10);
-		wait.until(ExpectedConditions.elementToBeClickable(linkLogout));
-		DriverManager.getDriver().findElement(linkLogout).click();
+		//WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 10);
+		//wait.until(ExpectedConditions.elementToBeClickable(linkLogout));
+		doClick(linkLogout,WaitStrategy.CLICKABLE);
 		return new OrangeHRMLoginPage();
 	}
 }
