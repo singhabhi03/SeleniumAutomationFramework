@@ -130,6 +130,8 @@
                   <a name="loginLogOutTest">
                   </a> <!-- loginLogOutTest -->
                   <span class="method-name">loginLogOutTest</span>
+                  <em>
+(To Test Login Logout Functionality with Valid Creds)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,8 +148,9 @@
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.tmb.listeners.ListenerClass&quot;/&gt;
+    &lt;listener class-name=&quot;com.tmb.listeners.MethodInterceptor&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; parallel=&quot;methods&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.tmb.tests.OrangeHRMTests&quot;/&gt;
     &lt;/classes&gt;
@@ -193,7 +196,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginLogOutTest')
 data.setCell(0, 2, 'com.tmb.tests.OrangeHRMTests')
-data.setCell(0, 3, 7982);
+data.setCell(0, 3, 7402);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -231,11 +234,11 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">loginLogOutTest</span>
-                <span class="method-start">8476 ms</span>
+                <span class="method-start">5485 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">16461 ms</span>
+                <span class="method-start">12890 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

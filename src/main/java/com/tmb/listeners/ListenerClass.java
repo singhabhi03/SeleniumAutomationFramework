@@ -1,6 +1,7 @@
 package com.tmb.listeners;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
@@ -13,7 +14,12 @@ import com.tmb.reports.ExtentReport;
 public class ListenerClass implements ITestListener,ISuiteListener{
 	@Override
 	public void onStart(ISuite suite) {
-		ExtentReport.initReports();
+		try {
+			ExtentReport.initReports();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 	}
 	@Override
 	public void onFinish(ISuite suite) {
@@ -37,8 +43,15 @@ public class ListenerClass implements ITestListener,ISuiteListener{
 	
 	@Override
 	public void onTestFailure(ITestResult result) {
-		ExtentLogger.fail(result.getMethod().getMethodName()+ " is failed");
-		//attach SS
+		
+		try {
+			ExtentLogger.fail(result.getMethod().getMethodName(), true);
+			ExtentLogger.fail(result.getThrowable().toString());
+		
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 	@Override

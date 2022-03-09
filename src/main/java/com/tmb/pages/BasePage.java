@@ -16,14 +16,24 @@ public class BasePage {
 	protected void doClick(By element, WaitStrategy waitStrategy,String elementName) {
 	WebElement ele=	ExplicitwaitFactory.performExplicitWait(waitStrategy, element);
 	ele.click();
-		ExtentLogger.pass(elementName+" is clicked ");
+		try {
+			ExtentLogger.pass(elementName+" is clicked ",true);
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 
 	}
 
 	protected void doSendKeys(By webelement, String value, WaitStrategy waitStrategy,String elementName) {
 		WebElement ele =ExplicitwaitFactory.performExplicitWait(waitStrategy, webelement);
 		ele.sendKeys(value);
-		ExtentLogger.pass(value+" is entered sucessfully in textbox "+ elementName);
+		try {
+			ExtentLogger.pass(value+" is entered sucessfully in textbox "+ elementName,true);
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 	}
 
 	protected String getTitle() {
