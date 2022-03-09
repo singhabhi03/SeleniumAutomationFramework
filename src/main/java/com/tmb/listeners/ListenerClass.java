@@ -29,6 +29,9 @@ public class ListenerClass implements ITestListener,ISuiteListener{
 		} catch (IOException e) {
 		
 			e.printStackTrace();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
 		}
 	}
 	@Override

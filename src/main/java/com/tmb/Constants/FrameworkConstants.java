@@ -10,6 +10,11 @@ public final class FrameworkConstants {
 
 	private static final String CHROME_DRIVER_PATH = System.getProperty("user.dir")
 			+ "/src/test/resources/executables/chromedriver.exe";
+	
+	private static final String EDGE_DRIVER_PATH = System.getProperty("user.dir")
+			+ "/src/test/resources/executables/msedgedriver.exe";
+	
+
 	private static final String CONFIGFILEPATH = System.getProperty("user.dir")
 			+ "/src/test/resources/config/config.properties";
 	private static final int EXPLICITWAIT = 10;
@@ -57,5 +62,8 @@ public final class FrameworkConstants {
 
 	public static String getDatasheet() {
 		return DATASHEET;
+	}
+	public static String getEdgeDriverPath() {
+		return EDGE_DRIVER_PATH;
 	}
 }

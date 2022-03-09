@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import com.tmb.Constants.FrameworkConstants;
 import com.tmb.enums.ConfigProperties;
@@ -14,11 +15,19 @@ public final class DriverFactory {
 		
 	}
 	
-	public static void initDriver() throws Exception {
+	public static void initDriver(String browser) throws Exception {
 		if(Objects.isNull(DriverManager.getDriver())) {
-			System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
-			WebDriver	driver = new ChromeDriver();
-			DriverManager.setDriver(driver);
+			if(browser.equalsIgnoreCase("chrome")) {
+				System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
+				WebDriver	driver = new ChromeDriver();
+				DriverManager.setDriver(driver);
+			}
+			else if(browser.equalsIgnoreCase("edge")) {
+				System.setProperty("webdriver.edge.driver", FrameworkConstants.getEdgeDriverPath());
+				WebDriver	driver = new EdgeDriver();
+				DriverManager.setDriver(driver);
+			}
+			
 			DriverManager.getDriver().manage().window().maximize();
 			DriverManager.getDriver().get(PropertiesFileUtil.getValue(ConfigProperties.URL));
 		}

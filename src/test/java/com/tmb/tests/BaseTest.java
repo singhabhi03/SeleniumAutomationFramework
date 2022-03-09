@@ -1,5 +1,7 @@
 package com.tmb.tests;
 
+import java.util.Map;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -13,9 +15,10 @@ public class BaseTest {
 	
 
 	@BeforeMethod
-	protected void setUp() throws Exception  {
+	protected void setUp(Object[] data) throws Exception  {
+		Map<String,String> map = (Map<String,String>)data[0];
 		
-		DriverFactory.initDriver();
+		DriverFactory.initDriver(map.get("browser"));
 	}
 
 	@AfterMethod
