@@ -8,6 +8,7 @@ import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
 
+import com.tmb.Constants.FrameworkConstants;
 import com.tmb.utils.ExcelUtils;
 
 public class MethodInterceptor  implements IMethodInterceptor{
@@ -17,7 +18,7 @@ public class MethodInterceptor  implements IMethodInterceptor{
 
 	List<Map<String, String>> list = null;
 	try {
-		list = ExcelUtils.getTestDetails("RUNMANAGER");
+		list = ExcelUtils.getTestDetails(FrameworkConstants.getRunmanagersheet());
 	} catch (Exception e) {
 
 		e.printStackTrace();

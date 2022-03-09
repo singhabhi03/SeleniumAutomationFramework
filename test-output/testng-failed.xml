@@ -9,7 +9,7 @@
     <classes>
       <class name="com.tmb.tests.OrangeHRMTests">
         <methods>
-          <include name="loginLogOutTest"/>
+          <include name="loginLogOutTest" invocation-numbers="1"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
