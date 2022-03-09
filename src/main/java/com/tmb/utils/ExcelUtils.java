@@ -20,13 +20,13 @@ public final class ExcelUtils {
 
 	}
 
-	public static List<Map<String, String>> getTestDetails() {
+	public static List<Map<String, String>> getTestDetails(String sheetName) {
 		List<Map<String, String>> list = null;
 		FileInputStream fip = null;
 		try {
 			fip = new FileInputStream(FrameworkConstants.getExcelpath());
 			XSSFWorkbook wb = new XSSFWorkbook(fip);
-			XSSFSheet sh = wb.getSheet("RUNMANAGER");
+			XSSFSheet sh = wb.getSheet(sheetName);
 
 			int lastRowNum = sh.getLastRowNum();
 			int lastColNumb = sh.getRow(0).getLastCellNum();

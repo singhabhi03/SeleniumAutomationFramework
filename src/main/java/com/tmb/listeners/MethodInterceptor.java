@@ -17,7 +17,7 @@ public class MethodInterceptor  implements IMethodInterceptor{
 
 	List<Map<String, String>> list = null;
 	try {
-		list = ExcelUtils.getTestDetails();
+		list = ExcelUtils.getTestDetails("RUNMANAGER");
 	} catch (Exception e) {
 
 		e.printStackTrace();
