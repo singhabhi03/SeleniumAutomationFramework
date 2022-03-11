@@ -19,7 +19,7 @@ public class ExplicitwaitFactory {
 			element= new WebDriverWait(DriverManager.getDriver(), FrameworkConstants.getExplicitwait())
 			.until(ExpectedConditions.presenceOfElementLocated(webelement));
 		}
-		else if(waitStrategy==WaitStrategy.PRESENCE) {
+		else if(waitStrategy==WaitStrategy.VISIBILITY) {
 		element=	new WebDriverWait(DriverManager.getDriver(), FrameworkConstants.getExplicitwait())
 			.until(ExpectedConditions.visibilityOfElementLocated(webelement));
 		}

@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" parallel="methods" name="Test(failed)">
     <classes>
-      <class name="com.tmb.tests.OrangeHRMTests">
+      <class name="com.tmb.tests.OrangeHRMLeaveFeatureTest">
         <methods>
-          <include name="loginLogOutTest" invocation-numbers="1"/>
           <include name="setUp"/>
+          <include name="leaveFeatureTest" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.tmb.tests.OrangeHRMTests -->
+      </class> <!-- com.tmb.tests.OrangeHRMLeaveFeatureTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

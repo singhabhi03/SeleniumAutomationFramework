@@ -9,7 +9,7 @@
 		<classes>
 
 			<class name="com.tmb.tests.OrangeHRMTests" />
-
+			<class name="com.tmb.tests.OrangeHRMLeaveFeatureTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
