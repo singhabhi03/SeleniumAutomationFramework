@@ -14,6 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.tmb.Constants.FrameworkConstants;
 
+
 public final class ExcelUtils {
 
 	private ExcelUtils() {
@@ -22,9 +23,9 @@ public final class ExcelUtils {
 
 	public static List<Map<String, String>> getTestDetails(String sheetName) {
 		List<Map<String, String>> list = null;
-		FileInputStream fip = null;
-		try {
-			fip = new FileInputStream(FrameworkConstants.getExcelpath());
+		
+		try (FileInputStream fip =new FileInputStream(FrameworkConstants.getExcelpath())){
+			
 			XSSFWorkbook wb = new XSSFWorkbook(fip);
 			XSSFSheet sh = wb.getSheet(sheetName);
 
@@ -46,23 +47,12 @@ public final class ExcelUtils {
 			}
 
 		} catch (FileNotFoundException e) {
-
+			
 			e.printStackTrace();
 		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-		finally {
-			try {
-				if(Objects.nonNull(fip)) {
-					fip.close();
-				}
 			
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-		}
+			e.printStackTrace();
+		} 
 
 		return list;
 
