@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.tmb.Constants.FrameworkConstants;
-
+import com.tmb.exception.FrameworkException;
+import com.tmb.exception.InvalidPathForExcelException;
 
 public final class ExcelUtils {
 
@@ -23,15 +23,15 @@ public final class ExcelUtils {
 
 	public static List<Map<String, String>> getTestDetails(String sheetName) {
 		List<Map<String, String>> list = null;
-		
-		try (FileInputStream fip =new FileInputStream(FrameworkConstants.getExcelpath())){
-			
+
+		try (FileInputStream fip = new FileInputStream(FrameworkConstants.getExcelpath())) {
+
 			XSSFWorkbook wb = new XSSFWorkbook(fip);
 			XSSFSheet sh = wb.getSheet(sheetName);
 
 			int lastRowNum = sh.getLastRowNum();
 			int lastColNumb = sh.getRow(0).getLastCellNum();
-			System.out.println(lastColNumb +"******"+lastRowNum);
+			System.out.println(lastColNumb + "******" + lastRowNum);
 			Map<String, String> map = null;
 			list = new ArrayList<>();
 
@@ -47,12 +47,13 @@ public final class ExcelUtils {
 			}
 
 		} catch (FileNotFoundException e) {
-			
-			e.printStackTrace();
+
+			throw new InvalidPathForExcelException("Excel file you are trying to read is not found");
 		} catch (IOException e) {
+
+			throw new FrameworkException("Some IO exception happened while reading excel file");
 			
-			e.printStackTrace();
-		} 
+		}
 
 		return list;
 

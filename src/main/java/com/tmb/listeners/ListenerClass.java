@@ -15,25 +15,16 @@ import com.tmb.reports.ExtentReport;
 public class ListenerClass implements ITestListener,ISuiteListener{
 	@Override
 	public void onStart(ISuite suite) {
-		try {
+	
 			ExtentReport.initReports();
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
+		
 	}
 	@Override
 	public void onFinish(ISuite suite) {
 			
-		try {
-			ExtentReport.flushReport();
-		} catch (IOException e) {
 		
-			e.printStackTrace();
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
+			ExtentReport.flushReport();
+		
 	}
 	@Override
 	public void onTestStart(ITestResult result) {

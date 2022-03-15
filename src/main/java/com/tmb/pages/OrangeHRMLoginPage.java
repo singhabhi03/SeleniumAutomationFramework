@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 import com.tmb.driver.DriverManager;
 import com.tmb.enums.WaitStrategy;
+import com.tmb.utils.EncodeDecodeUtils;
 
 public final class OrangeHRMLoginPage extends BasePage {
 	private final By textBxUsername = By.xpath("//input[@id='txtUsername']");
@@ -16,7 +17,7 @@ public final class OrangeHRMLoginPage extends BasePage {
 	}
 
 	public OrangeHRMLoginPage enterPassword(String passWord) {
-		doSendKeys(textBxPassword, passWord, WaitStrategy.PRESENCE,"Password");
+		doSendKeys(textBxPassword, EncodeDecodeUtils.getDecodedString(passWord), WaitStrategy.PRESENCE,"Password",true);
 		return this;
 	}
 

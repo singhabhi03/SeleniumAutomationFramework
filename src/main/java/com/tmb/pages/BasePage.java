@@ -11,6 +11,7 @@ import com.tmb.driver.DriverManager;
 import com.tmb.enums.WaitStrategy;
 import com.tmb.factories.ExplicitwaitFactory;
 import com.tmb.reports.ExtentLogger;
+import com.tmb.utils.EncodeDecodeUtils;
 
 public class BasePage {
 
@@ -19,24 +20,17 @@ public class BasePage {
 	protected void doClick(By element, WaitStrategy waitStrategy, String elementName) {
 		WebElement ele = ExplicitwaitFactory.performExplicitWait(waitStrategy, element);
 		ele.click();
-		try {
-			ExtentLogger.pass(elementName + " is clicked ", true);
-		} catch (Exception e) {
 
-			e.printStackTrace();
-		}
+		ExtentLogger.pass(elementName + " is clicked ", true);
 
 	}
 
 	protected void doSendKeys(By webelement, String value, WaitStrategy waitStrategy, String elementName) {
 		WebElement ele = ExplicitwaitFactory.performExplicitWait(waitStrategy, webelement);
 		ele.sendKeys(value);
-		try {
-			ExtentLogger.pass(value + " is entered sucessfully in textbox " + elementName, true);
-		} catch (Exception e) {
 
-			e.printStackTrace();
-		}
+		ExtentLogger.pass(value + " is entered sucessfully in textbox " + elementName, true);
+
 	}
 
 	protected String getTitle() {
@@ -46,24 +40,33 @@ public class BasePage {
 	protected void doMouseHover(By webelement, WaitStrategy waitStrategy, String elementName) {
 		WebElement ele = ExplicitwaitFactory.performExplicitWait(waitStrategy, webelement);
 		ac.moveToElement(ele).moveToElement(ele).build().perform();
-		try {
-			ExtentLogger.pass("Able to mousehover over " + elementName + " sucessfully", true);
-		} catch (Exception e) {
 
-			e.printStackTrace();
-		}
+		ExtentLogger.pass("Able to mousehover over " + elementName + " sucessfully", true);
+
 	}
 
 	protected String getText(By webElement) {
-		try {
-			ExtentLogger.pass("Able to fetch " + "Usage: <b>"+DriverManager.getDriver().findElement(webElement).getText()+"</b>"
-					+ " sucessfully", true);
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
+
+		ExtentLogger.pass("Able to fetch " + "Usage: <b><I>"
+				+ DriverManager.getDriver().findElement(webElement).getText() + "<I></b>" + " sucessfully", true);
+
 		return DriverManager.getDriver().findElement(webElement).getText();
 
 	}
 
+	protected void doSendKeys(By webelement, String value, WaitStrategy waitStrategy, String elementName,
+			boolean needencodeValue) {
+		if (needencodeValue) {
+			WebElement ele = ExplicitwaitFactory.performExplicitWait(waitStrategy, webelement);
+			ele.sendKeys(value);
+
+			ExtentLogger.pass(
+					EncodeDecodeUtils.getEncodedString(value) + " is entered sucessfully in textbox " + elementName, true);
+		}
+		else {
+			doSendKeys( webelement,  value,  waitStrategy,  elementName);
+		}
+		
+
+	}
 }

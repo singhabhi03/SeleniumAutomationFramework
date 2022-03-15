@@ -25,14 +25,14 @@ public final class FrameworkConstants {
 
 	private static final String DATASHEET = "DATA";
 
-	public static String getExtentReportFilePath() throws Exception {
+	public static String getExtentReportFilePath() {
 		if (extentReportFilePath.isEmpty()) {
 			extentReportFilePath = createReportPath();
 		}
 		return extentReportFilePath;
 	}
 
-	public static String createReportPath() throws Exception {
+	public static String createReportPath()  {
 		if (PropertiesFileUtil.getValue(ConfigProperties.OVERRIDEREPORTS).equalsIgnoreCase("no")) {
 			return EXTENTREPORTPATH + "/" + System.currentTimeMillis() + "index.html";
 		} else {

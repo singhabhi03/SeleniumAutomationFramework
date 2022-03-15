@@ -27,7 +27,7 @@ public final class ExtentLogger {
 		ExtentManager.getExtentTest().skip(message);
 	}
 
-	public static void pass(String message, boolean isScreenShotRequired) throws Exception {
+	public static void pass(String message, boolean isScreenShotRequired)  {
 		if (PropertiesFileUtil.getValue(ConfigProperties.PASSEDSTEPSSCREENSHOT).equalsIgnoreCase("yes")
 				&& isScreenShotRequired) {
 			ExtentManager.getExtentTest().pass(message,
