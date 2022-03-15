@@ -10,6 +10,8 @@ import com.tmb.Constants.FrameworkConstants;
 import com.tmb.enums.ConfigProperties;
 import com.tmb.utils.PropertiesFileUtil;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public final class DriverFactory {
 	private DriverFactory() {
 		
@@ -18,12 +20,12 @@ public final class DriverFactory {
 	public static void initDriver(String browser) {
 		if(Objects.isNull(DriverManager.getDriver())) {
 			if(browser.equalsIgnoreCase("chrome")) {
-				System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
+				WebDriverManager.chromedriver().setup();
 				WebDriver	driver = new ChromeDriver();
 				DriverManager.setDriver(driver);
 			}
 			else if(browser.equalsIgnoreCase("edge")) {
-				System.setProperty("webdriver.edge.driver", FrameworkConstants.getEdgeDriverPath());
+				WebDriverManager.edgedriver().setup();
 				WebDriver	driver = new EdgeDriver();
 				DriverManager.setDriver(driver);
 			}
