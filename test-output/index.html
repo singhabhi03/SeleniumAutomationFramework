@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,  2 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.tmb.tests.OrangeHRMTests" class="method navigator-link" hash-for-method="loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin1})">loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin1})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.tmb.tests.OrangeHRMTests" class="method navigator-link" hash-for-method="loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin})">loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -119,6 +138,220 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.tmb.tests.OrangeHRMTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin1})">
+                  </a> <!-- loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin1}) -->
+                  <span class="method-name">loginLogOutTest</span>
+                  <span class="parameters">({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin1})</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
+System info: host: &apos;LAPTOP-8SH76CLT&apos;, ip: &apos;192.168.225.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: firefox}], desiredCapabilities=Capabilities {browserName: firefox}}]
+Capabilities {}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:143)
+	at com.tmb.factories.DriverManagerFactory.getDriver(DriverManagerFactory.java:69)
+	at com.tmb.driver.DriverFactory.initDriver(DriverFactory.java:34)
+	at com.tmb.tests.BaseTest.setUp(BaseTest.java:21)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.UncheckedIOException: java.io.IOException: Stream closed
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:80)
+	at org.openqa.selenium.remote.http.RetryRequest.lambda$apply$6(RetryRequest.java:80)
+	at net.jodah.failsafe.Functions.lambda$get$0(Functions.java:48)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.Execution.executeSync(Execution.java:128)
+	at net.jodah.failsafe.FailsafeExecutor.call(FailsafeExecutor.java:379)
+	at net.jodah.failsafe.FailsafeExecutor.get(FailsafeExecutor.java:68)
+	at org.openqa.selenium.remote.http.RetryRequest.lambda$apply$7(RetryRequest.java:80)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:51)
+	at org.openqa.selenium.remote.http.RetryRequest.lambda$apply$6(RetryRequest.java:80)
+	at net.jodah.failsafe.Functions.lambda$get$0(Functions.java:48)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.Execution.executeSync(Execution.java:128)
+	at net.jodah.failsafe.FailsafeExecutor.call(FailsafeExecutor.java:379)
+	at net.jodah.failsafe.FailsafeExecutor.get(FailsafeExecutor.java:68)
+	at org.openqa.selenium.remote.http.RetryRequest.lambda$apply$7(RetryRequest.java:80)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:110)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:55)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
+	... 25 more
+Caused by: java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getInIfOpen(BufferedInputStream.java:157)
+	at java.base/java.io.BufferedInputStream.available(BufferedInputStream.java:408)
+	at java.base/java.io.FilterInputStream.available(FilterInputStream.java:166)
+	at java.base/java.io.PushbackInputStream.available(PushbackInputStream.java:275)
+	at io.netty.handler.stream.ChunkedStream.isEndOfInput(ChunkedStream.java:82)
+	at io.netty.handler.stream.ChunkedStream.readChunk(ChunkedStream.java:109)
+	at io.netty.handler.stream.ChunkedStream.readChunk(ChunkedStream.java:36)
+	at io.netty.handler.stream.ChunkedWriteHandler.doFlush(ChunkedWriteHandler.java:229)
+	at io.netty.handler.stream.ChunkedWriteHandler.flush(ChunkedWriteHandler.java:131)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:750)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:765)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:790)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:758)
+	at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:1020)
+	at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:311)
+	at org.asynchttpclient.netty.request.body.NettyInputStreamBody.write(NettyInputStreamBody.java:77)
+	at org.asynchttpclient.netty.request.NettyRequestSender.writeRequest(NettyRequestSender.java:433)
+	at org.asynchttpclient.netty.channel.NettyConnectListener.writeRequest(NettyConnectListener.java:80)
+	at org.asynchttpclient.netty.channel.NettyConnectListener.onSuccess(NettyConnectListener.java:156)
+	at org.asynchttpclient.netty.channel.NettyChannelConnector$1.onSuccess(NettyChannelConnector.java:92)
+	at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:26)
+	at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:605)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:104)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:300)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:335)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(To Test Login Logout Functionality with Valid Creds)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin})">
+                  </a> <!-- loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin}) -->
+                  <span class="method-name">loginLogOutTest</span>
+                  <span class="parameters">({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin})</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
+System info: host: &apos;LAPTOP-8SH76CLT&apos;, ip: &apos;192.168.225.35&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: firefox}], desiredCapabilities=Capabilities {browserName: firefox}}]
+Capabilities {}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:143)
+	at com.tmb.factories.DriverManagerFactory.getDriver(DriverManagerFactory.java:69)
+	at com.tmb.driver.DriverFactory.initDriver(DriverFactory.java:34)
+	at com.tmb.tests.BaseTest.setUp(BaseTest.java:21)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.UncheckedIOException: java.io.IOException: Stream closed
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:80)
+	at org.openqa.selenium.remote.http.RetryRequest.lambda$apply$6(RetryRequest.java:80)
+	at net.jodah.failsafe.Functions.lambda$get$0(Functions.java:48)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.Execution.executeSync(Execution.java:128)
+	at net.jodah.failsafe.FailsafeExecutor.call(FailsafeExecutor.java:379)
+	at net.jodah.failsafe.FailsafeExecutor.get(FailsafeExecutor.java:68)
+	at org.openqa.selenium.remote.http.RetryRequest.lambda$apply$7(RetryRequest.java:80)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:51)
+	at org.openqa.selenium.remote.http.RetryRequest.lambda$apply$6(RetryRequest.java:80)
+	at net.jodah.failsafe.Functions.lambda$get$0(Functions.java:48)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.RetryPolicyExecutor.lambda$supply$0(RetryPolicyExecutor.java:66)
+	at net.jodah.failsafe.Execution.executeSync(Execution.java:128)
+	at net.jodah.failsafe.FailsafeExecutor.call(FailsafeExecutor.java:379)
+	at net.jodah.failsafe.FailsafeExecutor.get(FailsafeExecutor.java:68)
+	at org.openqa.selenium.remote.http.RetryRequest.lambda$apply$7(RetryRequest.java:80)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:110)
+	at org.openqa.selenium.remote.tracing.TracedHttpClient.execute(TracedHttpClient.java:55)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
+	... 25 more
+Caused by: java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getInIfOpen(BufferedInputStream.java:157)
+	at java.base/java.io.BufferedInputStream.available(BufferedInputStream.java:408)
+	at java.base/java.io.FilterInputStream.available(FilterInputStream.java:166)
+	at java.base/java.io.PushbackInputStream.available(PushbackInputStream.java:275)
+	at io.netty.handler.stream.ChunkedStream.isEndOfInput(ChunkedStream.java:82)
+	at io.netty.handler.stream.ChunkedStream.readChunk(ChunkedStream.java:109)
+	at io.netty.handler.stream.ChunkedStream.readChunk(ChunkedStream.java:36)
+	at io.netty.handler.stream.ChunkedWriteHandler.doFlush(ChunkedWriteHandler.java:229)
+	at io.netty.handler.stream.ChunkedWriteHandler.flush(ChunkedWriteHandler.java:131)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:750)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:765)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:790)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:758)
+	at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:1020)
+	at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:311)
+	at org.asynchttpclient.netty.request.body.NettyInputStreamBody.write(NettyInputStreamBody.java:77)
+	at org.asynchttpclient.netty.request.NettyRequestSender.writeRequest(NettyRequestSender.java:433)
+	at org.asynchttpclient.netty.channel.NettyConnectListener.writeRequest(NettyConnectListener.java:80)
+	at org.asynchttpclient.netty.channel.NettyConnectListener.onSuccess(NettyConnectListener.java:156)
+	at org.asynchttpclient.netty.channel.NettyChannelConnector$1.onSuccess(NettyChannelConnector.java:92)
+	at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:26)
+	at org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:605)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:104)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:300)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:335)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(To Test Login Logout Functionality with Valid Creds)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -194,16 +427,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'leaveFeatureTest')
 data.setCell(0, 2, 'com.tmb.tests.OrangeHRMLeaveFeatureTest')
-data.setCell(0, 3, 11323);
+data.setCell(0, 3, 12806);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'loginLogOutTest')
+data.setCell(1, 2, 'com.tmb.tests.OrangeHRMTests')
+data.setCell(1, 3, 0);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'loginLogOutTest')
+data.setCell(2, 2, 'com.tmb.tests.OrangeHRMTests')
+data.setCell(2, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 11 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -229,18 +470,47 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.tmb.tests.OrangeHRMLeaveFeatureTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.tmb.tests.OrangeHRMTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setUp([{password=YWRtaW4xMjM=, browser=chrome, testname=leaveFeatureTest, execute=yes, username=Admin}])</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setUp([{password=YWRtaW4xMjM=, browser=firefox, testname=loginLogOutTest, execute=yes, username=Admin}])</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">leaveFeatureTest({password=YWRtaW4xMjM=, testname=leaveFeatureTest, execute=yes, browser=chrome, username=Admin})</span>
-                <span class="method-start">6549 ms</span>
+                <span class="method-name">loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin})</span>
+                <span class="method-start">193658 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">17876 ms</span>
+                <span class="method-start">193689 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">193691 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">loginLogOutTest({password=YWRtaW4xMjM=, testname=loginLogOutTest, execute=yes, browser=firefox, username=Admin1})</span>
+                <span class="method-start">193693 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">193701 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.tmb.tests.OrangeHRMLeaveFeatureTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp([{password=YWRtaW4xMjM=, browser=chrome, testname=leaveFeatureTest, execute=yes, username=Admin}])</span>
+                <span class="method-start">193736 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">leaveFeatureTest({password=YWRtaW4xMjM=, testname=leaveFeatureTest, execute=yes, browser=chrome, username=Admin})</span>
+                <span class="method-start">201842 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">214652 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
